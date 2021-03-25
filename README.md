@@ -1,0 +1,1 @@
+# forest-admin-smart-collections
