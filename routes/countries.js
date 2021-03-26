@@ -10,13 +10,7 @@ const recordSerializer = new RecordSerializer({ name: 'countries' });
 
 // Get a list of countries
 router.get('/countries', permissionMiddlewareCreator.list(), async (request, response, next) => {
-  console.log("GET /countries")
-  try {
-    const countries = await recordSerializer.serialize(COUNTRIES);
-    response.send({ ...countries, meta:{ count: COUNTRIES.length }});
-  } catch (err) {
-    next(err);
-  }
+  response.status(400).send({error: "Countries can only be listed in Planets/Detail/Related data/Countries"});
 });
 
 // Get a number of countries
